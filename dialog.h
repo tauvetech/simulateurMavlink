@@ -3,6 +3,13 @@
 
 #include <QDialog>
 
+#include <QUdpSocket>
+#include <QTimer>
+
+#include "mavlink/include/common/mavlink.h"
+
+#define BUFFER_LENGTH 2041
+
 namespace Ui {
     class Dialog;
 }
@@ -17,9 +24,23 @@ public:
 
 private:
     Ui::Dialog *ui;
+    QUdpSocket *udpSocket;
+    QUdpSocket *udpSocketFromQGroundControl;
+    QHostAddress *host;
+    QTimer *timer;
+
+    //mavlink:
+    mavlink_message_t msg;
+    mavlink_manual_control_t* manual_control;
+    uint16_t len;
+    uint8_t buf[BUFFER_LENGTH];
+
 
 private slots:
     void on_pbStartSimuMavlink_clicked();
+    void startBroadcasting();
+    void broadcastDatagram();
+    void processPendingDatagrams();
 };
 
 #endif // DIALOG_H

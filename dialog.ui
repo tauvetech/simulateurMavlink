@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="3" rowspan="3">
+   <item row="4" column="3" rowspan="2">
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
       <string>Received Message :</string>
@@ -26,37 +26,41 @@
      </layout>
     </widget>
    </item>
-   <item row="1" column="3">
+   <item row="3" column="3">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
       <string>Sent Message :</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="1">
-       <widget class="QTextEdit" name="textEdit_2"/>
+       <widget class="QTextEdit" name="textEditSendMessage"/>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QPushButton" name="pbStartSimuMavlink">
-     <property name="text">
-      <string>Start Simu Mavlink (periodic heartbeat id 100)</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" rowspan="4">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
+   <item row="3" column="0" rowspan="3">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pbStartSimuMavlink">
+       <property name="text">
+        <string>Start Simu Mavlink (periodic heartbeat id 100)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
