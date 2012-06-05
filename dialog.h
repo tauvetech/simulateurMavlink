@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::Dialog *ui;
+
+private slots:
+    void on_pbStartSimuMavlink_clicked();
 };
 
 #endif // DIALOG_H
