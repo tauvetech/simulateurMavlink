@@ -16,3 +16,6 @@ SOURCES += main.cpp\
 HEADERS  += dialog.h
 
 FORMS    += dialog.ui
+
+OTHER_FILES += \
+    README.txt
