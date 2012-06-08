@@ -6,7 +6,7 @@
 #include <QUdpSocket>
 #include <QTimer>
 
-#include "mavlink/include/common/mavlink.h"
+#include "custom_mavlink_messages/mavlink.h"
 
 #define BUFFER_LENGTH 2041
 
@@ -37,6 +37,7 @@ private:
 
 
 private slots:
+    void on_pushButton_clicked();
     void on_pbStartSimuMavlink_clicked();
     void startBroadcasting();
     void broadcastDatagram();

@@ -46,7 +46,7 @@ num++;
     //qDebug()<<"broadcast"<<endl;
 
 
-    mavlink_msg_heartbeat_pack(100, 200, &msg, MAV_GENERIC, MAV_AUTOPILOT_GENERIC);
+    mavlink_msg_heartbeat_pack(100, 200, &msg, MAV_TYPE_GENERIC, MAV_AUTOPILOT_GENERIC,0,0,0);
     len = mavlink_msg_to_send_buffer(buf, &msg);
     udpSocket->writeDatagram((char*)buf,len, *host, 14550);
     //ui->textEdit->setText((char *)buf);
@@ -98,4 +98,21 @@ void Dialog::processPendingDatagrams()
 
 
     }
+}
+
+void Dialog::on_pushButton_clicked()
+{
+
+    mavlink_msg_attitude_pack (100, 200, &msg, 47, 0.1, 0.2, 0.3, 0, 0, 0) ;
+    len = mavlink_msg_to_send_buffer(buf, &msg);
+    udpSocket->writeDatagram((char*)buf,len, *host, 14550);
+    //ui->textEdit->setText((char *)buf);
+//    QString strNum = QString().setNum(num);
+//    QString strMsgId = QString().setNum(msg.msgid);
+//    QString *str = new QString("Sent No: ");//<< msg.sysid <<"COMP:"<<msg.compid<<"LEN:"<<msg.len<<"MSG ID:"<<msg.msgid);
+//    str->append(strNum);
+//    str->append(" MSG ID : ");
+//    str->append(strMsgId);
+//    ui->textEditSendMessage->setText(*str);
+
 }
