@@ -6,7 +6,7 @@
 #include <QUdpSocket>
 #include <QTimer>
 
-#include "custom_mavlink_messages/mavlink.h"
+#include "Mavlink/custom_mavlink_messages/mavlink.h"
 
 #define BUFFER_LENGTH 2041
 
